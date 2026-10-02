@@ -195,6 +195,8 @@
 
   /* Field notes — white proof cards */
   .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  #field-notes .content-grid { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 760px) { #field-notes .content-grid { grid-template-columns: 1fr; } }
   .content-card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 28px; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
   .content-card:hover { border-color: var(--red); box-shadow: 0 10px 24px -16px rgba(0,0,0,0.2); }
   .content-card .tag { display: inline-block; font-family: Archivo, Arial, sans-serif; font-size: 12.5px; font-weight: 600; color: var(--red); background: rgba(179,34,42,0.08); padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; box-shadow: 0 0 0 rgba(179,34,42,0); transition: box-shadow 0.15s ease; }
@@ -405,7 +407,8 @@
   <div class="wrap-wide">
     <div class="kicker">From the field</div>
     <h2 class="section-title">Field Notes &amp; the Due Diligence Desk</h2>
-    <p class="section-lead">Real diagnostics from real businesses, and honest research into the tools and platforms owners keep asking about — pulled straight from The Steward's Brief.</p><div class="content-grid">    <div class="content-grid">
+    <p class="section-lead">Real diagnostics from real businesses, and honest research into the tools and platforms owners keep asking about — pulled straight from The Steward's Brief.</p>
+    <div class="content-grid">
       <div class="content-card">
         <div class="tag">Field Notes</div>
         <h3>If everything depends on you, you don't have a system yet</h3>
@@ -436,8 +439,12 @@
         <p style="margin-bottom:16px;">You don't decide your values in a mission statement meeting.</p>
         <a href="https://powerties-newsletter.beehiiv.com/p/the-value-you-say-you-have-vs-the-one-your-business-actually-shows">Read →</a>
       </div>
-    </div>
-    <p style="margin-top:36px;"><a href="https://powerties-newsletter.beehiiv.com/" class="btn ghost-light">View the full archive →</a></p>
+      <a href="https://powerties-newsletter.beehiiv.com/" class="content-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: center;">
+        <div class="tag">Archive</div>
+        <h3>View the full archive →</h3>
+        <p style="margin-bottom: 0; color: var(--muted);">Every Field Notes and Due Diligence Desk piece, all in one place.</p>
+        </a>
+      </div>
   </div>
 </section>
 
