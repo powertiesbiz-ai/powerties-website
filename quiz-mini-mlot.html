@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<!-- Hidden page: not linked in site navigation. Shared directly via email/social. -->
+<title>Money on the Table — 60-Second Assessment | PowerTies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#fafafa; --card:#ffffff; --ink:#121110; --muted:#57534c;
+    --line:#dcdcdc; --red:#b3222a; --red-bright:#d6343c; --red-tint:#f6e9e8;
+    color-scheme: light dark;
+  }
+  [data-theme="dark"] {
+    --paper:#17140f; --card:#201c17; --ink:#f2ede4; --muted:#b8ac9c;
+    --line:#3a332a; --red:#d6555c; --red-bright:#e56b70; --red-tint:#2c1918;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:'EB Garamond', Georgia, serif; font-size:19px; line-height:1.65; }
+  h1,h2,.label,button,.btn { font-family:Archivo, Arial, sans-serif; }
+  .wrap { max-width:680px; margin:0 auto; padding:0 24px; }
+  header.top { padding:18px 0; background:var(--card); border-bottom:1px solid var(--line); }
+  header.top .wrap { display:flex; align-items:center; justify-content:space-between; }
+  .wordmark { font-family:Archivo, Arial, sans-serif; font-weight:700; font-size:17px;
+    text-decoration:none; color:var(--ink); }
+  .wordmark span { color:var(--red); }
+  .quiz { padding:56px 0 90px; }
+  .kicker { font-family:Archivo, Arial, sans-serif; font-size:13px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; color:var(--red); margin:0 0 12px; }
+  h1 { font-size:34px; line-height:1.2; margin:0 0 14px; }
+  .lede { color:var(--muted); margin:0 0 30px; font-size:20px; }
+  .progress { height:6px; background:var(--line); border-radius:3px; margin:0 0 28px; overflow:hidden; }
+  .progress > div { height:100%; background:var(--red); width:0; transition:width .3s ease; }
+  .q-text { font-size:23px; margin:0 0 20px; font-weight:500; }
+  .opt { display:block; width:100%; text-align:left; background:var(--card); color:var(--ink);
+    border:1px solid var(--line); border-radius:10px; padding:15px 18px; margin:0 0 12px;
+    font-family:'EB Garamond', Georgia, serif; font-size:18px; cursor:pointer;
+    transition:border-color .15s ease, background .15s ease; }
+  .opt:hover { border-color:var(--red); background:var(--red-tint); }
+  .opt.selected { border-color:var(--red); background:var(--red-tint);
+    box-shadow:0 0 0 1px var(--red); }
+  textarea, input[type=text], input[type=email] { width:100%; background:var(--card); color:var(--ink);
+    border:1px solid var(--line); border-radius:10px; padding:14px 16px;
+    font-family:'EB Garamond', Georgia, serif; font-size:18px; margin:0 0 12px; }
+  textarea { min-height:110px; resize:vertical; }
+  label.f { font-family:Archivo, Arial, sans-serif; font-size:14px; font-weight:600;
+    display:block; margin:14px 0 6px; }
+  .btn { display:inline-block; background:var(--red); color:#fff; border:none; border-radius:10px;
+    padding:15px 34px; font-size:16px; font-weight:700; cursor:pointer; margin-top:18px;
+    text-decoration:none; transition:background .15s ease; }
+  .btn:hover { background:var(--red-bright); }
+  .btn:disabled { opacity:.55; cursor:wait; }
+  .btn-ghost { background:transparent; color:var(--muted); border:1px solid var(--line);
+    padding:13px 26px; font-size:15px; margin-left:10px; }
+  .btn-ghost:hover { color:var(--ink); border-color:var(--muted); background:transparent; }
+  .result-bucket { font-family:Archivo, Arial, sans-serif; font-size:15px; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; color:var(--red); margin:0 0 8px; }
+  .insight { background:var(--red-tint); border-left:4px solid var(--red); border-radius:0 10px 10px 0;
+    padding:18px 20px; margin:26px 0; }
+  .insight strong { font-family:Archivo, Arial, sans-serif; font-size:14px;
+    letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:8px; }
+  .next-note { color:var(--muted); font-size:17px; margin-top:22px; }
+  .fine { color:var(--muted); font-size:15px; margin-top:26px; }
+  .hidden { display:none; }
+  @media (max-width:560px){ h1{font-size:28px;} .q-text{font-size:21px;} }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="wordmark" href="https://powerties.us">Power<span>Ties</span></a>
+</div></header>
+
+<main class="quiz"><div class="wrap" id="app"></div></main>
+
+<script>
+const WEBHOOK = "https://n8n.powerties.us/webhook/quiz-lead-capture";
+const SECRET  = "ee6d2f3485b73c0c663d28d6cebaee20";
+const SRC = new URLSearchParams(location.search).get("src") || "";
+
+const QUIZ = {
+  id: "mini-mlot",
+  name: "Mini-MLOT Quiz",
+  leadSource: "Mini-MLOT Quiz",
+  title: "Money on the Table",
+  subtitle: "The 60-Second Assessment",
+  intro: "Five quick questions. At the end, you'll know exactly what kind of revenue leak is costing you most — and where to look first.",
+  questions: [
+    { key:"bucket", text:"Where do you think money is slipping through the cracks in your business?",
+      options:[
+        {v:"leaky-funnel", t:"We get interest, but too little of it becomes paying customers"},
+        {v:"pricing-trap", t:"We work hard, but the margins feel thin"},
+        {v:"manual-everything", t:"Too much depends on manual work — mine or my team's"},
+        {v:"ghost-town", t:"Honestly, the phone just doesn't ring enough"}
+      ]},
+    { key:"frustration", text:"What's your single biggest revenue frustration right now?", open:true,
+      placeholder:"In your own words — one or two sentences is plenty." },
+    { key:"tracking", text:"How do you currently track where customers come from?",
+      options:[
+        {v:"no-track", t:"We don't really track it"},
+        {v:"spreadsheet", t:"Spreadsheet"},
+        {v:"crm", t:"CRM software"},
+        {v:"gut", t:"Gut feel"}
+      ]},
+    { key:"pricing", text:"When did you last raise your prices?",
+      options:[
+        {v:"p6", t:"Within the last 6 months"},
+        {v:"p12", t:"6–12 months ago"},
+        {v:"p24", t:"1–2 years ago"},
+        {v:"pnever", t:"I can't remember"}
+      ]},
+    { key:"team", text:"How many people are on your team?",
+      options:[
+        {v:"solo", t:"Just me"},
+        {v:"small", t:"2–10"},
+        {v:"mid", t:"11–30"},
+        {v:"large", t:"31+"}
+      ]}
+  ],
+  buckets: {
+    "leaky-funnel": {
+      name:"Leaky Funnel",
+      diagnosis:"You're attracting interest — but too much of it disappears before it becomes revenue. The good news: you don't have a traffic problem, you have a conversion problem, and conversion problems are fixable.",
+      insight:"Most leaky funnels lose money in exactly two places — the follow-up (or lack of it) and the offer itself.",
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+    },
+    "pricing-trap": {
+      name:"Pricing Trap",
+      diagnosis:"You work hard, but the margins feel thin. That's usually not an effort problem — it's a pricing problem. Most small businesses undercharge by 15–30% and never know it.",
+      insight:"If raising your prices 10% wouldn't lose you a single customer, you've been donating that 10% to your clients.",
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+    },
+    "manual-everything": {
+      name:"Manual Everything",
+      diagnosis:"Too much depends on you doing it by hand — and every manual process is a leak: hours you can't bill, follow-ups that never happen, details that slip through.",
+      insight:"Businesses like yours usually get the fastest wins, because every process you fix hands you hours back immediately.",
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+    },
+    "ghost-town": {
+      name:"Ghost Town Pipeline",
+      diagnosis:"The phone doesn't ring enough — and without a pipeline, there's no revenue to optimize yet. The fix starts with knowing your numbers: where customers could come from, and what's stopping them.",
+      insight:"Most ghost-town pipelines aren't a marketing problem, they're a visibility problem — the business is fine, nobody knows it exists.",
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+    }
+  }
+};
+
+const app = document.getElementById("app");
+const answers = {};
+let step = -1; // -1 intro, 0..n-1 questions, n email gate, n+1 result
+
+function esc(s){ return String(s||"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function render(){
+  const n = QUIZ.questions.length;
+  if(step === -1){
+    app.innerHTML = `
+      <p class="kicker">${esc(QUIZ.subtitle)}</p>
+      <h1>${esc(QUIZ.title)}</h1>
+      <p class="lede">${esc(QUIZ.intro)}</p>
+      <button class="btn" onclick="next()">Start the assessment</button>
+      <p class="fine">Takes about 60 seconds. Your answers stay private.</p>`;
+  } else if(step < n){
+    const q = QUIZ.questions[step];
+    const pct = Math.round(step / (n + 1) * 100);
+    let body = "";
+    if(q.open){
+      body = `<textarea id="open" placeholder="${esc(q.placeholder||"")}">${esc(answers[q.key]||"")}</textarea>
+        <button class="btn" onclick="saveOpen(${step})">Continue</button>`;
+    } else {
+      body = q.options.map(o=>`
+        <button class="opt ${answers[q.key]===o.v?"selected":""}" onclick="pick(${step},'${o.v}')">${esc(o.t)}</button>`).join("");
+    }
+    app.innerHTML = `
+      <div class="progress"><div style="width:${pct}%"></div></div>
+      <p class="kicker">Question ${step+1} of ${n}</p>
+      <p class="q-text">${esc(q.text)}</p>${body}
+      ${step>0?`<div><button class="btn-ghost btn" onclick="back()">Back</button></div>`:""}`;
+    const ta = document.getElementById("open");
+    if(ta) ta.focus();
+  } else if(step === n){
+    app.innerHTML = `
+      <div class="progress"><div style="width:92%"></div></div>
+      <p class="kicker">Your result is ready</p>
+      <h1>Where should we send your personalized prescription?</h1>
+      <p class="lede">Your bucket, what it means, and your exact next step — in your inbox in the next minute.</p>
+      <label class="f" for="fname">First name</label>
+      <input type="text" id="fname" autocomplete="given-name" placeholder="Jane">
+      <label class="f" for="email">Email</label>
+      <input type="email" id="email" autocomplete="email" placeholder="jane@company.com">
+      <label class="f" for="company">Company <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+      <input type="text" id="company" autocomplete="organization" placeholder="Company Inc.">
+      <button class="btn" id="sendbtn" onclick="submitLead()">Show my result</button>
+      <p class="fine">One email with your result. No spam, no list-selling — ever.</p>`;
+  } else {
+    const b = QUIZ.buckets[answers.bucket] || QUIZ.buckets["leaky-funnel"];
+    app.innerHTML = `
+      <div class="progress"><div style="width:100%"></div></div>
+      <p class="result-bucket">Your result</p>
+      <h1>${esc(b.name)}</h1>
+      <p>${esc(b.diagnosis)}</p>
+      <div class="insight"><strong>Worth your 60 seconds</strong>${esc(b.insight)}</div>
+      <a class="btn" href="${esc(b.cta.url)}">${esc(b.cta.label)}</a>
+      <p class="next-note">Your full prescription is on its way to your inbox — including the exact next step for a <strong>${esc(b.name)}</strong>.</p>`;
+    window.scrollTo(0,0);
+  }
+}
+
+function next(){ step++; render(); window.scrollTo(0,0); }
+function back(){ step--; render(); window.scrollTo(0,0); }
+function pick(i, v){ answers[QUIZ.questions[i].key] = v; next(); }
+function saveOpen(i){
+  const ta = document.getElementById("open");
+  answers[QUIZ.questions[i].key] = ta.value.trim();
+  next();
+}
+
+async function submitLead(){
+  const fname = document.getElementById("fname").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const company = document.getElementById("company").value.trim();
+  if(!fname){ alert("Please enter your first name."); return; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ alert("Please enter a valid email address."); return; }
+  const btn = document.getElementById("sendbtn");
+  btn.disabled = true; btn.textContent = "Preparing your result…";
+  const payload = {
+    secret: SECRET, quiz: QUIZ.id, quiz_name: QUIZ.name,
+    lead_source: QUIZ.leadSource, bucket: answers.bucket || "",
+    first_name: fname, email: email, company: company,
+    team_size: answers.team || "", src: SRC,
+    answers: {
+      frustration: answers.frustration || "",
+      tracking: answers.tracking || "",
+      pricing: answers.pricing || ""
+    }
+  };
+  try {
+    await fetch(WEBHOOK, { method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify(payload) });
+  } catch(e){ /* never punish the visitor for a backend failure */ }
+  step++; render();
+}
+
+render();
+</script>
+</body>
+</html>
