@@ -88,30 +88,37 @@ const QUIZ = {
   leadSource: "Mini-MLOT Quiz",
   title: "Money on the Table",
   subtitle: "The 60-Second Assessment",
-  intro: "Five quick questions. At the end, you'll know exactly what kind of revenue leak is costing you most — and where to look first.",
+  intro: "Five quick questions. At the end, you'll see which of the six places businesses usually leak revenue shows the strongest signal in yours — a directional read from your answers, not a dollar figure. The full MLOT diagnostic measures all six.",
   questions: [
-    { key:"bucket", text:"Where do you think money is slipping through the cracks in your business?",
+    { key:"bucket", text:"Where do you feel money slipping through the cracks in your business?",
       options:[
-        {v:"leaky-funnel", t:"We get interest, but too little of it becomes paying customers"},
-        {v:"pricing-trap", t:"We work hard, but the margins feel thin"},
-        {v:"manual-everything", t:"Too much depends on manual work — mine or my team's"},
-        {v:"ghost-town", t:"Honestly, the phone just doesn't ring enough"}
+        {v:"sales-marketing", t:"We get interest, but too little of it becomes paying customers"},
+        {v:"process", t:"Too much depends on manual work — mine or my team's"},
+        {v:"leadership", t:"I'm the bottleneck — too many decisions need me personally"},
+        {v:"retention", t:"Customers don't come back like they should"},
+        {v:"collections", t:"We've earned money that's still sitting in unpaid invoices"},
+        {v:"culture", t:"The team isn't pulling together the way it should"}
       ]},
-    { key:"frustration", text:"What's your single biggest revenue frustration right now?", open:true,
-      placeholder:"In your own words — one or two sentences is plenty." },
-    { key:"tracking", text:"How do you currently track where customers come from?",
+    { key:"followup", text:"When you send a quote or proposal, how much of it actually gets followed up?",
       options:[
-        {v:"no-track", t:"We don't really track it"},
-        {v:"spreadsheet", t:"Spreadsheet"},
-        {v:"crm", t:"CRM software"},
-        {v:"gut", t:"Gut feel"}
+        {v:"f_most", t:"Most of it — we chase everything"},
+        {v:"f_half", t:"About half"},
+        {v:"f_rare", t:"Rarely — if they want it, they'll call back"},
+        {v:"f_none", t:"We don't really send formal quotes"}
       ]},
-    { key:"pricing", text:"When did you last raise your prices?",
+    { key:"manual", text:"How many hours a week do you or your team lose to manual, repetitive work?",
       options:[
-        {v:"p6", t:"Within the last 6 months"},
-        {v:"p12", t:"6–12 months ago"},
-        {v:"p24", t:"1–2 years ago"},
-        {v:"pnever", t:"I can't remember"}
+        {v:"m_10", t:"10+ hours — it's a real drain"},
+        {v:"m_5", t:"5–10 hours"},
+        {v:"m_few", t:"A few"},
+        {v:"m_none", t:"Hardly any — we're well systemized"}
+      ]},
+    { key:"bottleneck", text:"How many day-to-day decisions have to go through you personally?",
+      options:[
+        {v:"b_all", t:"Nearly all of them"},
+        {v:"b_most", t:"Most of the big ones"},
+        {v:"b_some", t:"Some — the team handles the rest"},
+        {v:"b_few", t:"Very few — the team runs itself"}
       ]},
     { key:"team", text:"How many people are on your team?",
       options:[
@@ -122,28 +129,40 @@ const QUIZ = {
       ]}
   ],
   buckets: {
-    "leaky-funnel": {
-      name:"Leaky Funnel",
-      diagnosis:"You're attracting interest — but too much of it disappears before it becomes revenue. The good news: you don't have a traffic problem, you have a conversion problem, and conversion problems are fixable.",
-      insight:"Most leaky funnels lose money in exactly two places — the follow-up (or lack of it) and the offer itself.",
+    "sales-marketing": {
+      name:"Sales & Marketing",
+      diagnosis:"You're attracting interest — but too much of it disappears before it becomes revenue. In our experience this is the most common leak we find, and it usually lives in the follow-up: most businesses chase less than half of what they quote.",
+      insight:"The fortune is in the follow-up — businesses that chase every quote often find months of lost revenue sitting in their sent folder.",
       cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
     },
-    "pricing-trap": {
-      name:"Pricing Trap",
-      diagnosis:"You work hard, but the margins feel thin. That's usually not an effort problem — it's a pricing problem. Most small businesses undercharge by 15–30% and never know it.",
-      insight:"If raising your prices 10% wouldn't lose you a single customer, you've been donating that 10% to your clients.",
+    "process": {
+      name:"Process Inefficiency",
+      diagnosis:"Too much of your business runs on manual effort — hours you can't bill, details that slip, work that gets done twice. Every manual process is a leak you pay for twice: once in the hours, once in the mistakes.",
+      insight:"Process leaks are usually the fastest wins — every manual task you fix hands you hours back the same week.",
       cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
     },
-    "manual-everything": {
-      name:"Manual Everything",
-      diagnosis:"Too much depends on you doing it by hand — and every manual process is a leak: hours you can't bill, follow-ups that never happen, details that slip through.",
-      insight:"Businesses like yours usually get the fastest wins, because every process you fix hands you hours back immediately.",
+    "leadership": {
+      name:"Leadership Misalignment",
+      diagnosis:"When every decision needs you, you become the ceiling on your own business. The cost isn't just your hours — it's the speed of everything: responses slow down, opportunities wait, and the team stops thinking for itself.",
+      insight:"An owner working IN the business instead of ON it is the single most expensive bottleneck we see.",
       cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
     },
-    "ghost-town": {
-      name:"Ghost Town Pipeline",
-      diagnosis:"The phone doesn't ring enough — and without a pipeline, there's no revenue to optimize yet. The fix starts with knowing your numbers: where customers could come from, and what's stopping them.",
-      insight:"Most ghost-town pipelines aren't a marketing problem, they're a visibility problem — the business is fine, nobody knows it exists.",
+    "retention": {
+      name:"Customer Retention",
+      diagnosis:"Winning a new customer costs far more than keeping one — and when customers don't come back, you're refilling a bucket with a hole in it. Even a small improvement in repeat business goes straight to your bottom line.",
+      insight:"Most businesses don't have a customer problem — they have a follow-through problem after the first sale.",
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+    },
+    "collections": {
+      name:"Collections",
+      diagnosis:"Money you've already earned, sitting in someone else's account. Late payments and invoicing gaps are the quietest leak in the business — the work is done, it just never turns into cash.",
+      insight:"Unpaid invoices aren't an accounting issue — they're an interest-free loan you're giving your customers.",
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+    },
+    "culture": {
+      name:"Culture & Legacy Issues",
+      diagnosis:"When the team isn't pulling together, everything costs more: decisions slow down, good people leave, and the ones who stay do the minimum. Culture leaks don't show up on a P&L — they show up everywhere else.",
+      insight:"You can't out-process a culture problem — but fixing the culture makes every process work better.",
       cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
     }
   }
@@ -197,15 +216,17 @@ function render(){
       <button class="btn" id="sendbtn" onclick="submitLead()">Show my result</button>
       <p class="fine">One email with your result. No spam, no list-selling — ever.</p>`;
   } else {
-    const b = QUIZ.buckets[answers.bucket] || QUIZ.buckets["leaky-funnel"];
+    const b = QUIZ.buckets[scoreBuckets(answers)] || QUIZ.buckets["sales-marketing"];
     app.innerHTML = `
       <div class="progress"><div style="width:100%"></div></div>
-      <p class="result-bucket">Your result</p>
+      <p class="result-bucket">Your strongest signal</p>
       <h1>${esc(b.name)}</h1>
       <p>${esc(b.diagnosis)}</p>
       <div class="insight"><strong>Worth your 60 seconds</strong>${esc(b.insight)}</div>
       <a class="btn" href="${esc(b.cta.url)}">${esc(b.cta.label)}</a>
-      <p class="next-note">Your full prescription is on its way to your inbox — including the exact next step for a <strong>${esc(b.name)}</strong>.</p>`;
+      <p class="next-note">This was the 60-second version. The full MLOT diagnostic measures all six areas where businesses leak revenue — and puts a real dollar figure on each one.</p>
+      <p class="fine">A directional snapshot from five questions — your strongest signal, not a revenue estimate.</p>
+      <p class="next-note">Your full prescription is on its way to your inbox — including the exact next step for <strong>${esc(b.name)}</strong>.</p>`;
     window.scrollTo(0,0);
   }
 }
@@ -213,6 +234,23 @@ function render(){
 function next(){ step++; render(); window.scrollTo(0,0); }
 function back(){ step--; render(); window.scrollTo(0,0); }
 function pick(i, v){ answers[QUIZ.questions[i].key] = v; next(); }
+
+// Directional scoring: every answer votes across the six leak buckets.
+// Q1 is the owner's own read of their business, so it counts double.
+// Ties are broken by fixed bucket order, so the result is deterministic.
+const BUCKET_ORDER = ["sales-marketing","process","leadership","retention","collections","culture"];
+function scoreBuckets(a){
+  const s = {"sales-marketing":0,"process":0,"leadership":0,"retention":0,"collections":0,"culture":0};
+  if(a.bucket && s.hasOwnProperty(a.bucket)) s[a.bucket] += 2;
+  s["sales-marketing"] += ({f_most:0,f_half:1,f_rare:2,f_none:1}[a.followup] || 0);
+  s["process"]        += ({m_10:2,m_5:1,m_few:0,m_none:0}[a.manual] || 0);
+  s["leadership"]     += ({b_all:2,b_most:1,b_some:0,b_few:0}[a.bottleneck] || 0);
+  if(a.team === "solo") s["leadership"] += 1;              // solo owner is the bottleneck by definition
+  if(a.team === "mid" || a.team === "large") s["culture"] += 1; // bigger team, more coordination surface
+  let best = BUCKET_ORDER[0];
+  for(const k of BUCKET_ORDER){ if(s[k] > s[best]) best = k; }
+  return best;
+}
 function saveOpen(i){
   const ta = document.getElementById("open");
   answers[QUIZ.questions[i].key] = ta.value.trim();
@@ -229,13 +267,13 @@ async function submitLead(){
   btn.disabled = true; btn.textContent = "Preparing your result…";
   const payload = {
     secret: SECRET, quiz: QUIZ.id, quiz_name: QUIZ.name,
-    lead_source: QUIZ.leadSource, bucket: answers.bucket || "",
+    lead_source: QUIZ.leadSource, bucket: scoreBuckets(answers) || "",
     first_name: fname, email: email, company: company,
     team_size: answers.team || "", src: SRC,
     answers: {
-      frustration: answers.frustration || "",
-      tracking: answers.tracking || "",
-      pricing: answers.pricing || ""
+      followup: answers.followup || "",
+      manual: answers.manual || "",
+      bottleneck: answers.bottleneck || ""
     }
   };
   try {
