@@ -263,6 +263,8 @@
 
   /* Client testimonial */
   .testimonial { text-align: center; }
+.reviews-list .review-entry + .review-entry { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--line); }
+.reviews-clutch { text-align: center; margin: 26px 0 0; font-family: Archivo, Arial, sans-serif; font-size: 14px; color: var(--muted); }
   .testimonial blockquote { margin: 0 auto; font-size: 28px; font-style: italic; line-height: 1.45; max-width: 44ch; color: var(--ink); }
   .testimonial cite { display: block; font-style: normal; font-family: Archivo, Arial, sans-serif; font-size: 14px; color: var(--muted); margin-top: 14px; }
   .testimonial .clutch-line { margin: 10px 0 0; font-family: Archivo, Arial, sans-serif; font-size: 14px; color: var(--muted); }
@@ -508,14 +510,17 @@
 </section>
 
 
-<section id="client-review" class="white-section" style="border-top:1px solid var(--line);">
+<section id="client-reviews" class="white-section" style="border-top:1px solid var(--line);">
   <div class="wrap">
     <div class="kicker" style="text-align:center;">What clients say</div>
-    <div class="testimonial">
-      <blockquote>&ldquo;They are a relationship-first organization with both talent and heart.&rdquo;</blockquote>
-      <cite>Esther Deutsch, Founder &amp; CEO, Sunset Connect</cite>
-      <p class="clutch-line"><span class="stars">★★★★★</span> 5.0 — <a href="https://clutch.co/profile/powerties-consulting-group" target="_blank" rel="noopener">verified client review on Clutch</a></p>
+    <div class="reviews-list">
+      <div class="testimonial review-entry">
+        <blockquote>&ldquo;They are a relationship-first organization with both talent and heart.&rdquo;</blockquote>
+        <cite>Esther Deutsch, Founder &amp; CEO, Sunset Connect</cite>
+        <p class="clutch-line"><span class="stars">★★★★★</span> 5.0</p>
+      </div>
     </div>
+    <p class="reviews-clutch"><a href="https://clutch.co/profile/powerties-consulting-group" target="_blank" rel="noopener">Read our reviews on Clutch</a></p>
   </div>
 </section>
 
