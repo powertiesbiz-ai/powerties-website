@@ -29,6 +29,8 @@
   .wordmark { font-family:Archivo, Arial, sans-serif; font-weight:700; font-size:17px;
     text-decoration:none; color:var(--ink); }
   .wordmark span { color:var(--red); }
+  .logo-img { height: 40px; width: auto; }
+  .logo-img-wrap { display: flex; align-items: center; padding: 6px 10px; border-radius: 6px; }
   .quiz { padding:56px 0 90px; }
   .kicker { font-family:Archivo, Arial, sans-serif; font-size:13px; font-weight:700;
     letter-spacing:2px; text-transform:uppercase; color:var(--red); margin:0 0 12px; }
@@ -78,7 +80,7 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="wordmark" href="https://powerties.us">Power<span>Ties</span></a>
+  <a class="wordmark" href="https://powerties.us"><span class="logo-img-wrap"><img class="logo-img" src="images/logo.png" alt="PowerTies Consulting Group"></span></a>
 </div></header>
 
 <main class="quiz"><div class="wrap" id="app"></div></main>
