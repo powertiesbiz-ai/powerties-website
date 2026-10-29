@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Veteran Resources — PowerTies Consulting Group</title>
+<meta name="description" content="Free resources for veterans from PowerTies Consulting Group: find the benefits you qualify for, estimate VA disability pay with the VA’s own math, practical courses, and free help filing your first claim.">
+<link rel="canonical" href="https://powerties.us/veteran-resources.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PowerTies Consulting Group">
+<meta property="og:title" content="Veteran Resources — PowerTies Consulting Group">
+<meta property="og:description" content="Free resources for veterans: find your benefits, estimate VA disability pay, take practical courses, and get free help filing your first claim.">
+<meta property="og:url" content="https://powerties.us/veteran-resources.html">
+<meta property="og:image" content="https://powerties.us/images/logo.png">
+<meta property="og:image:alt" content="PowerTies Consulting Group logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Veteran Resources — PowerTies Consulting Group">
+<meta name="twitter:description" content="Free resources for veterans: find your benefits, estimate VA disability pay, take practical courses, and get free help filing your first claim.">
+<meta name="twitter:image" content="https://powerties.us/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fafafa;
+    --card: #ffffff;
+    --ink: #121110;
+    --muted: #57534c;
+    --line: #dcdcdc;
+    --red: #b3222a;
+    --red-bright: #d6343c;
+    --red-crimson: #7a0f14;
+    --red-tint: #f6e9e8;
+    color-scheme: light dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  [data-theme="dark"] {
+    --paper: #17140f;
+    --card: #201c17;
+    --ink: #f2ede4;
+    --muted: #b8ac9c;
+    --line: #3a332a;
+    --red: #d6555c;
+    --red-bright: #e56b70;
+    --red-crimson: #5c0d11;
+    --red-tint: #2c1918;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  * { box-sizing: inherit; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.65;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  h1, h2, h3, .label, nav, button, .btn { font-family: Archivo, Arial, sans-serif; }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  .wrap-wide { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+
+  section { padding: 84px 0; }
+  .white-section { background: var(--card); color: var(--ink); }
+  .offwhite-section { background: var(--paper); color: var(--ink); }
+
+  header.top { padding: 20px 0; background: var(--card); border-bottom: 1px solid var(--line); position: relative; z-index: 10; }
+  header.top .wrap-wide { display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { display: flex; align-items: center; text-decoration: none; }
+  .logo-img { height: 42px; width: auto; }
+  .logo-img-wrap { display: flex; align-items: center; padding: 6px 10px; border-radius: 6px; }
+  [data-theme="dark"] .logo-img-wrap { background: #ffffff; }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .nav-link { font-family: Archivo, Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink); }
+  .nav-link:hover { color: var(--red); }
+  .theme-toggle {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    font-size: 13px;
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: Archivo, Arial, sans-serif;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .theme-toggle:hover { border-color: var(--red); color: var(--red); }
+
+  .btn { display: inline-block; padding: 14px 26px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 4px; transition: all 0.15s ease; }
+  .btn.primary { background: var(--red); color: #ffffff; border: 1px solid var(--red); }
+  .btn.primary:hover { background: var(--red-dark, var(--red-bright)); }
+  .btn.ghost-light { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn.ghost-light:hover { border-color: var(--red); color: var(--red); }
+
+  /* About hero */
+  .about-hero { padding: 90px 0 70px; }
+  .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
+  .about-photo-frame {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -18px rgba(20, 12, 8, 0.35);
+    aspect-ratio: 4/5;
+    background: linear-gradient(150deg, var(--red-tint), var(--paper));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .about-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-photo-frame .ph-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(23,20,18,0.72); color: #fff;
+    font-family: Archivo, Arial, sans-serif; font-size: 12.5px;
+    padding: 12px 16px; line-height: 1.4;
+  }
+  .about-hero .kicker { font-size: 15px; color: var(--red); font-style: italic; margin-bottom: 14px; }
+  .about-hero h1 { font-size: 40px; line-height: 1.2; font-weight: 700; margin: 0 0 22px; }
+  .about-hero p { font-size: 19px; color: var(--muted); margin: 0 0 18px; }
+  .about-hero p:last-child { margin-bottom: 0; }
+
+  .kicker { font-size: 15px; color: var(--red); font-style: italic; margin-bottom: 10px; }
+  h2.section-title { font-size: 30px; font-weight: 700; margin: 0 0 16px; max-width: 22ch; }
+  .section-lead { color: var(--muted); max-width: 58ch; margin: 0 0 48px; font-size: 18px; }
+
+  /* Books */
+  .books-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .book-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 28px; display: flex; gap: 24px; align-items: flex-start;
+  }
+  .book-cover {
+    width: 110px; height: 160px; flex-shrink: 0;
+    background: linear-gradient(150deg, var(--red-tint), var(--paper));
+    border: 1px dashed var(--red);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 10px;
+    font-family: Archivo, Arial, sans-serif; font-size: 11.5px; color: var(--red);
+    overflow: hidden;
+  }
+  .book-cover.filled { border: 1px solid var(--line); padding: 0; box-shadow: 0 6px 16px -8px rgba(20,12,8,0.3); }
+  .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .book-card h3 { font-size: 19px; margin: 0 0 10px; }
+  .book-card p { color: var(--muted); font-size: 16px; margin: 0 0 18px; }
+
+  /* Links row: podcast + newsletter */
+  .links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .link-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 30px;
+  }
+  .link-card .tag { display: inline-block; font-family: Archivo, Arial, sans-serif; font-size: 12.5px; font-weight: 600; color: var(--red); background: var(--red-tint); padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; }
+  .link-card h3 { font-size: 19px; margin: 0 0 10px; }
+  .link-card p { color: var(--muted); margin: 0 0 20px; font-size: 16px; }
+
+  .placeholder-box {
+    border: 1px dashed var(--red);
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-family: Archivo, Arial, sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    margin-top: 14px;
+    line-height: 1.5;
+    background: var(--red-tint);
+  }
+
+  footer { padding: 48px 0 64px; font-size: 15px; color: var(--muted); background: var(--paper); border-top: 1px solid var(--line); }
+  footer .cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; }
+  footer h4 { font-family: Archivo, Arial, sans-serif; font-size: 13px; color: var(--ink); margin: 0 0 12px; }
+  footer a { text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .legal { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; }
+  footer .contact-line { margin-top: 16px; font-size: 14px; }
+  footer .contact-line a { color: inherit; }
+  footer .follow { margin-top: 40px; }
+  footer .follow p { margin: 0; }
+
+  @media (max-width: 760px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .books-grid { grid-template-columns: 1fr; }
+    .links-grid { grid-template-columns: 1fr; }
+    .book-card { flex-direction: column; }
+    .about-hero h1 { font-size: 30px; }
+    footer .cols { grid-template-columns: 1fr; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "PowerTies Consulting Group",
+  "legalName": "PowerTies Consulting Group LLC",
+  "url": "https://powerties.us/",
+  "logo": "https://powerties.us/images/logo.png",
+  "telephone": "646.598.2834",
+  "founder": { "@type": "Person", "name": "Keith Tully" },
+  "sameAs": [
+    "https://www.linkedin.com/in/keithdtully",
+    "https://www.instagram.com/powertiesbiz/",
+    "https://facebook.com/847139098669953",
+    "https://www.youtube.com/channel/UC5HzPfHKVt3Tf6HqMdgozzA",
+    "https://open.spotify.com/show/6vTkyPU0Q0n9IO6jjucEph",
+    "https://maps.app.goo.gl/sJ2TxX4bkumfY89f9"
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap-wide">
+    <a class="wordmark" href="index.html">
+      <span class="logo-img-wrap"><img class="logo-img" src="images/logo.png" alt="PowerTies Consulting Group"></span>
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="index.html">Home</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">Dim</button>
+    </div>
+  </div>
+</header>
+
+<section class="white-section" id="top">
+  <div class="wrap-wide">
+    <div class="kicker">For veterans</div>
+    <h1 class="section-title">Veteran Resources</h1>
+    <p class="section-lead">Everything we’re building for veterans, in one place. Find the benefits you qualify for, see what a disability rating actually pays, and learn the next step — free tools first, no pitch. This page grows as each piece goes live.</p>
+  </div>
+</section>
+
+<section class="offwhite-section" id="benefits">
+  <div class="wrap-wide">
+    <div class="kicker">Benefits finder</div>
+    <h2 class="section-title">Find the benefits you qualify for — VetsAndMore</h2>
+    <p class="section-lead">Hundreds of programs exist for veterans — education, housing, health care, jobs, money help, and more — and most veterans never hear about the ones they qualify for. VetsAndMore asks a few plain questions and matches you to the programs that fit, every one of them checked against its official source.</p>
+    <div class="placeholder-box">
+      VetsAndMore is built and being set up now. When it goes live, it will live right here — answer a few questions, get your programs, and take your first steps.
+    </div>
+  </div>
+</section>
+
+<section class="white-section" id="calculator">
+  <div class="wrap-wide">
+    <div class="kicker">Free tool</div>
+    <h2 class="section-title">What would your VA disability rating actually pay?</h2>
+    <p class="section-lead">VA ratings don’t add up the way you’d expect — a 50% rating and a 30% rating combine to 70%, not 80%. Enter your ratings and your dependents below to see your combined rating and estimated monthly pay, worked out with the VA’s own math and current rates. Read it as what a rating pays if it’s granted — not a prediction of what the VA will award. Free, and no sign-up.</p>
+    <div style="border:1px solid var(--line); border-radius:6px; overflow:hidden;">
+      <iframe src="https://vetcalc.org/widget/va-disability/?embed=true&theme=light" width="100%" height="600" frameborder="0" title="VA Disability Calculator" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="offwhite-section" id="courses">
+  <div class="wrap-wide">
+    <div class="kicker">Learn the next step</div>
+    <h2 class="section-title">Courses built for veterans</h2>
+    <p class="section-lead">Short, practical courses that start where most veterans actually are: what benefits exist, what you qualify for, and how to file — then on to building a business of your own. Watch at your own pace, with a community of veterans walking the same road.</p>
+    <div class="placeholder-box">
+      The first courses are in production now. When they open, they’ll be right here.
+    </div>
+  </div>
+</section>
+
+<section class="white-section" id="filing">
+  <div class="wrap-wide">
+    <div class="kicker">Your claim</div>
+    <h2 class="section-title">Never filed your VA claim?</h2>
+    <p class="section-lead">We’ll walk you through filing it yourself, free — step by step, with accredited VSO help pointed out along the way. That’s not the pitch. It’s just something a veteran-owned firm ought to do.</p>
+    <p><a class="btn primary" href="index.html#veterans">See the veteran path — including building a firm of your own →</a></p>
+  </div>
+</section>
+
+<section class="offwhite-section" id="ascend">
+  <div class="wrap-wide">
+    <div style="border:1px solid var(--line); border-radius:6px; background:var(--card); padding:26px 28px; display:flex; gap:26px; align-items:center; flex-wrap:wrap;">
+      <a href="https://theascendcollective.org/" target="_blank" rel="noopener" style="flex:0 0 auto;">
+        <img src="images/ascend-collective-logo.png" alt="The ASCEND Collective logo" style="width:118px; height:auto; display:block;">
+      </a>
+      <div style="flex:1 1 320px; min-width:280px;">
+        <div style="font-size:12.5px; font-weight:600; letter-spacing:0.03em; color:var(--red); margin-bottom:10px;">A RESOURCE WE RECOMMEND</div>
+        <h3 style="margin:0 0 10px;">The ASCEND Collective</h3>
+        <p style="color:var(--muted); margin:0 0 12px;">A nonprofit that helps veterans and military spouses translate their skills and get matched with employers who value them — and helps business owners find proven people. Whether you’re searching for work or doing the hiring, it’s one of the most helpful doors you can walk through. PowerTies isn’t part of The ASCEND Collective — we share it because it works, and because good people should know it exists.</p>
+        <a href="https://theascendcollective.org/" target="_blank" rel="noopener">Visit The ASCEND Collective →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="cols">
+      <div>
+        <h4>PowerTies Consulting Group</h4>
+        <p style="max-width: 32ch;">Execution-first consulting for founder-led businesses.</p>
+      </div>
+      <div>
+        <h4>Talk to us</h4>
+        <p><a href="tel:6465982834">646.598.2834</a></p>
+        <p><a href="https://calendly.com/powertiesbiz" target="_blank" rel="noopener">calendly.com/powertiesbiz</a></p>
+        <p><a href="https://www.powerties.us">www.PowerTies.us</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="https://powerties-newsletter.beehiiv.com/" target="_blank" rel="noopener">The Steward's Brief</a></p>
+        <p><a href="https://mlot.vercel.app/" target="_blank" rel="noopener">Free scorecard</a></p>
+        <p><a href="/sitemap.xml">Sitemap</a></p>
+      </div>
+    </div>
+    <div class="follow">
+      <h4>Follow along</h4>
+      <p><a href="https://www.linkedin.com/in/keithdtully" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; <a href="https://www.instagram.com/powertiesbiz/" target="_blank" rel="noopener">Instagram</a> &nbsp;|&nbsp; <a href="https://facebook.com/847139098669953" target="_blank" rel="noopener">Facebook</a> &nbsp;|&nbsp; <a href="https://www.youtube.com/channel/UC5HzPfHKVt3Tf6HqMdgozzA" target="_blank" rel="noopener">YouTube</a> &nbsp;|&nbsp; <a href="https://open.spotify.com/show/6vTkyPU0Q0n9IO6jjucEph" target="_blank" rel="noopener">Daily Dose of Power podcast</a> &nbsp;|&nbsp; <a href="https://maps.app.goo.gl/sJ2TxX4bkumfY89f9" target="_blank" rel="noopener">Google</a></p>
+    </div>
+    <div class="legal">
+      PowerTies Consulting Group LLC is the legal and billing entity for all programs, content, and advisory work.
+    </div>
+    <div class="contact-line">
+      PowerTies Consulting Group &nbsp;|&nbsp; <a href="tel:6465982834">646.598.2834</a> &nbsp;|&nbsp; <a href="https://calendly.com/powertiesbiz" target="_blank" rel="noopener">calendly.com/powertiesbiz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  toggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? 'Dim' : 'Brighten';
+  });
+</script>
+
+</body>
+</html>
