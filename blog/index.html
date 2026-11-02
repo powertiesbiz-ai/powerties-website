@@ -21,24 +21,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --paper:#fafafa; --card:#ffffff; --ink:#121110; --muted:#57534c; --line:#dcdcdc; --red:#b3222a; color-scheme: light; }
+  :root { --paper:#fafafa; --card:#ffffff; --ink:#121110; --muted:#57534c; --line:#dcdcdc; --red:#b3222a; --red-bright:#d6343c; --red-crimson:#7a0f14; --red-tint:#f6e9e8; color-scheme: light; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--paper); color:var(--ink); font-family:'EB Garamond', Georgia, serif; font-size:19px; line-height:1.65; }
   h1, h2, nav { font-family:Archivo, Arial, sans-serif; }
   a { color:var(--red); }
+  a:hover { color:var(--red-bright); }
   .wrap { max-width:760px; margin:0 auto; padding:0 28px; }
-  header.top { padding:20px 0; background:var(--card); border-bottom:1px solid var(--line); }
+  header.top { padding:20px 0; background:var(--card); border-top:3px solid var(--red); border-bottom:1px solid var(--line); }
   header.top .wrap { display:flex; align-items:center; justify-content:space-between; max-width:1040px; }
   .wordmark { font-family:Archivo, Arial, sans-serif; font-weight:700; text-decoration:none; color:var(--ink); font-size:18px; }
   .nav-link { font-family:Archivo, Arial, sans-serif; font-size:14px; font-weight:600; text-decoration:none; color:var(--ink); margin-left:22px; }
+  .nav-link:hover { color:var(--red); }
   main { padding:56px 0 24px; }
-  main h1 { font-size:34px; line-height:1.2; margin:0 0 10px; }
+  main h1 { font-size:34px; line-height:1.2; margin:0 0 10px; border-bottom:3px solid var(--red); padding-bottom:12px; }
   .intro { color:var(--muted); margin-bottom:32px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:22px 24px; margin-bottom:18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--red); border-radius:8px; padding:22px 24px; margin-bottom:18px; transition:border-color .2s, box-shadow .2s; }
+  .card:hover { border-color:var(--red); box-shadow:0 12px 28px -16px rgba(179,34,42,0.25); }
   .card h2 { font-size:22px; margin:0 0 6px; }
   .card h2 a { color:var(--ink); text-decoration:none; }
+  .card h2 a:hover { color:var(--red); }
   .card p { margin:0; color:var(--muted); font-size:17px; }
   footer { padding:40px 0 56px; font-size:15px; color:var(--muted); border-top:1px solid var(--line); margin-top:40px; }
+  footer a:hover { color:var(--red-bright); }
+
 </style>
 </head>
 <body>
