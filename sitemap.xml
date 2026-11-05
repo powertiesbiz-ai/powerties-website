@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://powerties.us/</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://powerties.us/about.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://powerties.us/privacy.html</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://powerties.us/terms.html</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://powerties.us/veteran-resources.html</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerties.us/about</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://powerties.us/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://powerties.us/resources</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerties.us/veteran-resources</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://powerties.us/privacy</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://powerties.us/terms</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://powerties.us/sitemap</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://powerties.us/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url>
-    <loc>https://powerties.us/blog/maybe-is-not-a-decision.html</loc>
+    <loc>https://powerties.us/blog/maybe-is-not-a-decision</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
   <url>
-    <loc>https://powerties.us/blog/what-can-ai-do-for-a-small-business.html</loc>
+    <loc>https://powerties.us/blog/what-can-ai-do-for-a-small-business</loc>
     <lastmod>2026-11-01</lastmod>
   </url>
   <url>
-    <loc>https://powerties.us/blog/cost-to-start-using-ai-small-business.html</loc>
+    <loc>https://powerties.us/blog/cost-to-start-using-ai-small-business</loc>
     <lastmod>2026-11-01</lastmod>
   </url>
   <url>
-    <loc>https://powerties.us/blog/ai-tools-for-contractors-and-home-services.html</loc>
+    <loc>https://powerties.us/blog/ai-tools-for-contractors-and-home-services</loc>
     <lastmod>2026-11-01</lastmod>
   </url>
   <url>
-    <loc>https://powerties.us/blog/how-to-choose-ai-tools-without-wasting-money.html</loc>
+    <loc>https://powerties.us/blog/how-to-choose-ai-tools-without-wasting-money</loc>
     <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>
