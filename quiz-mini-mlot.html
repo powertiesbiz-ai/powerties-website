@@ -66,6 +66,11 @@
     padding:18px 20px; margin:26px 0; }
   .insight strong { font-family:Archivo, Arial, sans-serif; font-size:14px;
     letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:8px; }
+  .fixbox { border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:30px 0 0; background:var(--card); }
+  .fixbox .fix-kicker { font-family:Archivo, Arial, sans-serif; font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--red); margin:0 0 8px; }
+  .fixbox p { margin:0 0 10px; }
+  .fixbox .btn { margin-top:8px; }
+  .fixbox a.plain { color:var(--red); }
   .next-note { color:var(--muted); font-size:17px; margin-top:22px; }
   .fine { color:var(--muted); font-size:15px; margin-top:26px; }
   .hidden { display:none; }
@@ -141,37 +146,43 @@ const QUIZ = {
       name:"Sales & Marketing",
       diagnosis:"You're attracting interest — but too much of it disappears before it becomes revenue. In our experience this is the most common leak we find, and it usually lives in the follow-up: most businesses chase less than half of what they quote.",
       insight:"The fortune is in the follow-up — businesses that chase every quote often find months of lost revenue sitting in their sent folder.",
-      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" },
+      fix:{ name:"More Leads", url:"https://courses.powerties.us/p/more-leads", blurb:"Six moves that turn word of mouth into steady work: call every past customer, team up with referral partners, be where the asking happens, answer with demonstration, add ads only when the rest is working, and collect with integrity." }
     },
     "process": {
       name:"Process Inefficiency",
       diagnosis:"Too much of your business runs on manual effort — hours you can't bill, details that slip, work that gets done twice. Every manual process is a leak you pay for twice: once in the hours, once in the mistakes.",
       insight:"Process leaks are usually the fastest wins — every manual task you fix hands you hours back the same week.",
-      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" },
+      fix:{ name:"Too Many Hats", url:"https://courses.powerties.us/p/too-many-hats", blurb:"Get jobs off your head and keep them off. A practical course on handing work to your team and your systems without losing quality or control." }
     },
     "leadership": {
       name:"Leadership Misalignment",
       diagnosis:"When every decision needs you, you become the ceiling on your own business. The cost isn't just your hours — it's the speed of everything: responses slow down, opportunities wait, and the team stops thinking for itself.",
       insight:"An owner working IN the business instead of ON it is the single most expensive bottleneck we see.",
-      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" },
+      fix:{ name:"i Go And Find Solutions (iGAFS): A Leadership Philosophy", url:"https://courses.powerties.us/p/igafs", blurb:"When every decision needs you, you are the ceiling on your own business. iGAFS is the leadership philosophy for owners who want to lead the business instead of being its bottleneck." }
     },
     "retention": {
       name:"Customer Retention",
       diagnosis:"Winning a new customer costs far more than keeping one — and when customers don't come back, you're refilling a bucket with a hole in it. Even a small improvement in repeat business goes straight to your bottom line.",
       insight:"Most businesses don't have a customer problem — they have a follow-through problem after the first sale.",
-      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" },
+      fix:{ name:"Building Good People", url:"https://courses.powerties.us/p/building-good-people", blurb:"Keeping good people is a culture and standards matter. This course teaches how to build people who know what good looks like, and who stay and grow." }
     },
     "collections": {
       name:"Collections",
       diagnosis:"Money you've already earned, sitting in someone else's account. Late payments and invoicing gaps are the quietest leak in the business — the work is done, it just never turns into cash.",
       insight:"Unpaid invoices aren't an accounting issue — they're an interest-free loan you're giving your customers.",
-      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" },
+      fix:{ name:"More Leads: Move 6, Collections With Integrity", url:"https://courses.powerties.us/p/more-leads", blurb:"Collections begins at the sale: scope and cost made plain up front, an invoicing system that tracks who has not paid, and direct follow up that holds people to their word, with integrity." }
     },
     "culture": {
       name:"Culture & Legacy Issues",
       diagnosis:"When the team isn't pulling together, everything costs more: decisions slow down, good people leave, and the ones who stay do the minimum. Culture leaks don't show up on a P&L — they show up everywhere else.",
       insight:"You can't out-process a culture problem — but fixing the culture makes every process work better.",
-      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" }
+      cta:{ label:"Run the full MLOT assessment — free", url:"https://mlot.vercel.app" },
+      fix:{ name:"Building Good People", url:"https://courses.powerties.us/p/building-good-people", blurb:"Culture is built person by person, standard by standard. A step by step course on building a team that pulls together and stays." }
     }
   }
 };
@@ -233,6 +244,13 @@ function render(){
       <div class="insight"><strong>Worth your 60 seconds</strong>${esc(b.insight)}</div>
       <a class="btn" href="${esc(b.cta.url)}">${esc(b.cta.label)}</a>
       <p class="next-note">This was the 60-second version. The full MLOT diagnostic measures all six areas where businesses leak revenue — and puts a real dollar figure on each one.</p>
+      <div class="fixbox">
+        <p class="fix-kicker">Not looking for an assessment?</p>
+        <p>Here is the specific fix for the problem you just named:</p>
+        <a class="btn" href="${esc(b.fix.url)}">${esc(b.fix.name)}</a>
+        <p style="margin-top:14px">${esc(b.fix.blurb)}</p>
+        <p class="fine" style="margin-top:10px">Or browse the whole shelf on the <a class="plain" href="https://courses.powerties.us">Products page</a>.</p>
+      </div>
       <p class="fine">A directional snapshot from five questions — your strongest signal, not a revenue estimate.</p>
       <p class="next-note">Your full prescription is on its way to your inbox — including the exact next step for <strong>${esc(b.name)}</strong>.</p>`;
     window.scrollTo(0,0);

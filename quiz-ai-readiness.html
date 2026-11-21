@@ -66,6 +66,11 @@
     padding:18px 20px; margin:26px 0; }
   .insight strong { font-family:Archivo, Arial, sans-serif; font-size:14px;
     letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:8px; }
+  .fixbox { border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:30px 0 0; background:var(--card); }
+  .fixbox .fix-kicker { font-family:Archivo, Arial, sans-serif; font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--red); margin:0 0 8px; }
+  .fixbox p { margin:0 0 10px; }
+  .fixbox .btn { margin-top:8px; }
+  .fixbox a.plain { color:var(--red); }
   .next-note { color:var(--muted); font-size:17px; margin-top:22px; }
   .fine { color:var(--muted); font-size:15px; margin-top:26px; }
   .hidden { display:none; }
@@ -214,6 +219,11 @@ function render(){
       <p>${esc(b.diagnosis)}</p>
       <div class="insight"><strong>Worth your 60 seconds</strong>${esc(b.insight)}</div>
       <a class="btn" href="${esc(b.cta.url)}">${esc(b.cta.label)}</a>
+      <div class="fixbox">
+        <p class="fix-kicker">Not looking for a session?</p>
+        <p>Browse the courses and tools on the Products page. Each one is a specific answer to a specific problem.</p>
+        <a class="btn" href="https://courses.powerties.us">See the Products page</a>
+      </div>
       <p class="next-note">Your full prescription is on its way to your inbox — including the exact next step for <strong>${esc(b.name)}</strong>.</p>`;
     window.scrollTo(0,0);
   }
