@@ -6,7 +6,7 @@
 // This function records the click, sets that cookie for 90 days,
 // then sends the visitor to the PowerTiesRefer app with ?ref=<CODE>.
 
-export async function onRequestGet(context) {
+async function handle(context) {
   const raw = (context.params && context.params.code) || "";
   const code = String(raw).toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 24);
 
@@ -40,3 +40,9 @@ export async function onRequestGet(context) {
     },
   });
 }
+
+export const onRequestGet = handle;
+// HEAD (e.g. curl -sI checks) must get the same redirect + cookie,
+// not the static-site fallback.
+export const onRequestHead = handle;
+export const onRequest = handle;
