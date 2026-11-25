@@ -7,7 +7,8 @@
 // then sends the visitor to the PowerTiesRefer app with ?ref=<CODE>.
 
 async function handle(context) {
-  const raw = (context.params && context.params.code) || "";
+  let raw = (context.params && context.params.code) || "";
+  try { raw = decodeURIComponent(raw); } catch { /* keep raw */ }
   const code = String(raw).toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 24);
 
   // No usable code: just go home, no cookie.
